@@ -1,13 +1,14 @@
+
 //Submitted By: Surya Bhatt
+/**This will be the class which tests all the other classes and tests for time overlaps
+**/
 
 import static org.junit.Assert.*;
 
 import java.util.*;
 
-import junit.framework.Assert;
-
 import org.junit.Test;
-import org.junit.experimental.categories.Categories.ExcludeCategory;
+
 
 
 public class TAScheduleTest {
@@ -16,15 +17,19 @@ public class TAScheduleTest {
 		// TODO Auto-generated constructor stub
 	}
 	
+	//setting any Date of a Sunday Midnight as a reference date
 	public static void getDay(){
 		//int startTime;
 		Calendar date = new GregorianCalendar(2013,9,20);
 		System.out.println(date.getTime());
 		
 	}
+	//Writing all the tests to be performed, for overlapping timings and non overlapping timings
+	//for overlapping times
 	
 	@Test
-	public void testOverlapPositive(){ //for overlapping times
+	
+	public void testOverlapPositive(){ 
 		
 		MeetingTime mt_Lab1= new MeetingTime(3720,3760);
 		//tues 2:30 to 3:30
@@ -32,28 +37,39 @@ public class TAScheduleTest {
 		System.out.println("test1 executed");
 		assertEquals(true, mt_Lab1.overlap(mt_course1_day2));
 	}
+	
+	//for non- overlapping times
 	@Test
-	public void testOverlapPositive2(){    //for non- overlapping times
+	public void testOverlapPositive2(){    
 		MeetingTime mt_course1_day2 = new MeetingTime(3750, 3810);
 		MeetingTime mt_Lab2 = new MeetingTime(7200, 7260);
 		System.out.println("test1 executed again");
 		assertEquals(false, mt_Lab2.overlap(mt_course1_day2));
-	}	
+	}
+	
+	//for overlapping times, with a different case
 	@Test
-	public void testNonOverLap(){	//for overlapping times
+	public void testNonOverLap(){	
 		MeetingTime mt_Lab1= new MeetingTime(3720,3760);
 		MeetingTime mt_course1_day2 = new MeetingTime(3750, 3810);
 		System.out.println("t2 executed");
 		assertNotEquals(false, mt_Lab1.overlap(mt_course1_day2));
 	}
+	
+	// for non overlapping times
 	@Test
-	public void testNonOverLap2(){  // for non overlapping
+	public void testNonOverLap2(){  
 		MeetingTime mt_course1_day1 = new MeetingTime(2280, 2340);
 		MeetingTime mt_Lab2 = new MeetingTime(7200, 7260);
 		System.out.println("test 2 executed again");
 		assertNotEquals(true, mt_Lab2.overlap(mt_course1_day1));
 		
 	}
+	
+	
+	
+	//Though the main method below is never used, we could have used it also if we wanted to
+	// test for specific cases. 
 	public static void main(String[] args) {
 		
 		//Assuming reference day as sunday
