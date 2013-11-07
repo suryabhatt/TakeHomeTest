@@ -1,5 +1,9 @@
 //Submitted By: Surya Bhatt
-
+/****
+ * Here the MeetingTime class'defines the start time and end time of all the courses and the labs. 
+ * Then we have getters and setters for StartTimes and EndTimes
+ * Finally we have  a logic to test the meeting times between different courses
+****/
 public class MeetingTime {
 
 	private int startTime;
