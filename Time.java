@@ -1,5 +1,10 @@
+
 //Submitted By: Surya Bhatt
 
+
+	/**Time class here is used to get the meeting time and day,  and returns values for 
+	 * meeting time and day.
+	**/
 
 public class Time {
 
